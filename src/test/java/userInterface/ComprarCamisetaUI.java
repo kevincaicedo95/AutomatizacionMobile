@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class ComprarCamisetaUI {
-    public static final Target MAMELUCO_ROJO = Target.the("nombre mameluco rojo").located(By.xpath("(//android.widget.TextView[@text=\"Mameluco Sauce Labs\"])"));
     public static final Target BOTON_AÑADIR_AL_CARRITO = Target.the("boton para añadir al carrito").located(By.xpath("(//android.widget.TextView[@text=\"AÑADIR A CARRITO\"])[3]"));
     public static final Target BOTON_CARRITO = Target.the("Boton carrito").located(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Carrito\"]"));
     public static final Target BOTON_CHECKOUT = Target.the("Boton checkout").located(By.xpath("//android.widget.TextView[@text=\"CHECKOUT\"]"));

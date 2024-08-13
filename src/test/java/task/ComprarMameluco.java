@@ -1,12 +1,13 @@
 package task;
 
-import io.appium.java_client.android.AndroidDriver;
+import interactions.SwipeCordenadas;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 import static userInterface.ComprarCamisetaUI.*;
 
 public class ComprarMameluco implements Task {
@@ -17,7 +18,7 @@ public class ComprarMameluco implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                new ScrollToTarget((MAMELUCO_ROJO)),
+                SwipeCordenadas.paraHacerScroll(353,1472,145),
                 Click.on(BOTON_AÑADIR_AL_CARRITO),
                 Click.on(BOTON_CARRITO),
                 Click.on(BOTON_CHECKOUT),
@@ -26,7 +27,7 @@ public class ComprarMameluco implements Task {
                 Enter.theValue("005").into(ESPACIO_CODIGO_POSTAL),
                 Click.on(BOTON_CONTINUAR),
                 Ensure.that(PRECIO).isEnabled(),
-                new ScrollToTarget(BOTON_TERMINAR),
+                SwipeCordenadas.paraHacerScroll(353,1472,417),
                 Click.on(BOTON_TERMINAR)
         );
     }
